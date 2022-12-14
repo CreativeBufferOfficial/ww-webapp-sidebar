@@ -12,22 +12,55 @@ export default {
       type: "Color",
       defaultValue: "#F23636",
     },
-    setting: {
+    title: {
+      defaultValue: { isWwObject: true, type: 'ww-text' },
+    },
+    toolTip: {
+      defaultValue: true
+    },
+    defautActiveTabIndex: {
+      defaultValue: 1
+    },
+    brand: {
       hidden: true,
       defaultValue: {
-        icon: 'https://www.computerhope.com/jargon/h/img.png'
+        icon: 'https://www.computerhope.com/jargon/h/img.png',
+        color: '#FFFFFF',
+        borderColor: '#F3F4F7',
+        activeColor: '#6346BF' 
       }
     },
-    cards: {
+    smallSidebar: {
+      defaultValue: true,
       hidden: true,
+    },
+    cards: {
       defaultValue: [
         {
           icon: 'https://www.computerhope.com/jargon/h/img.png',
           urlPrefix: 'String',
-          title: 'String', // shows as tooltip on hover
+          title: 'String 1', // shows as tooltip on hover
           subNav: [
             { 
               urlPrefix: 'String',
+              icon: 'https://www.computerhope.com/jargon/h/img.png',
+              title: 'Sub String',
+            },
+            { 
+              urlPrefix: 'String',
+              icon: 'https://www.computerhope.com/jargon/h/img.png',
+              title: 'Sub String',
+            }
+          ],
+          showSubNav: 'Boolean', 
+        },
+        {
+          icon: 'https://www.computerhope.com/jargon/h/img.png',
+          urlPrefix: 'String',
+          title: 'String 2', // shows as tooltip on hover
+          subNav: [
+            { 
+              urlPrefix: 'Sub String',
               icon: 'https://www.computerhope.com/jargon/h/img.png',
               title: 'String',
             }
@@ -36,30 +69,41 @@ export default {
         },
         {
           icon: 'https://www.computerhope.com/jargon/h/img.png',
-          urlPrefix: 'String',
-          title: 'String', // shows as tooltip on hover
+          urlPrefix: 'String 3',
+          title: 'String 3', // shows as tooltip on hover
           subNav: [
             { 
-              urlPrefix: 'String',
+              urlPrefix: 'Sub String',
               icon: 'https://www.computerhope.com/jargon/h/img.png',
               title: 'String',
-            }
-          ],
-          showSubNav: 'Boolean', 
-        },
-        {
-          icon: 'https://www.computerhope.com/jargon/h/img.png',
-          urlPrefix: 'String',
-          title: 'String', // shows as tooltip on hover
-          subNav: [
+            },
             { 
-              urlPrefix: 'String',
+              urlPrefix: 'Sub String',
               icon: 'https://www.computerhope.com/jargon/h/img.png',
               title: 'String',
-            }
+            },
+            { 
+              urlPrefix: 'Sub String',
+              icon: 'https://www.computerhope.com/jargon/h/img.png',
+              title: 'String',
+            },
           ],
           showSubNav: 'Boolean', 
         }
+      ]
+    },
+    bottomMenu: {
+      defaultValue: [
+        {
+          icon: 'https://www.computerhope.com/jargon/h/img.png',
+          urlPrefix: 'String',
+          title: 'String 1', 
+        },
+        {
+          icon: 'https://www.computerhope.com/jargon/h/img.png',
+          urlPrefix: 'String',
+          title: 'String 2',
+        },
       ]
     },
   },
