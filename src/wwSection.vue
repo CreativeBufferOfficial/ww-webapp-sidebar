@@ -6,22 +6,22 @@
       </div>
       <div v-for="(card, i) in content.cards" :key="i" @click="activeNewTab(i)" class="sidebar-section__main--icon" :class="{'sidebar-section__main--active': activeTab===i}">
         <div class="sidebar-section__main--menu">
-          <img width="24" height="24" :src="card.icon" alt="">
+          <div :class="[card.icon]" aria-hidden="true"></div>
           <span v-if="content.toolTip" class="tool-tip">{{card.title}}</span>
-        </div>
+        </div>    
         <div class="sidebar-section__main--sub-menu" :class="{active: (activeTab===i && !content.smallSidebar)}">
           <div class="sidebar-section__sub--icon--bold">
             <p>{{card.title}}</p>
           </div>
           <div v-for="(subNav, i) in card.subNav" @click="subMenuClick(i)" :key="i" class="sidebar-section__sub--icon">
-            <img width="24" height="24" :src="subNav.icon" alt="">
+            <div :class="[subNav.icon]" aria-hidden="true"></div>
             <wwElement class="title__content" v-bind="content.title" :ww-props="{ text: subNav.title, readonly: true }" />
           </div>
         </div>
       </div>
       <div class="sidebar-section__main--bottom">
         <div v-for="(menu, i) in content.bottomMenu" :key="i" @click="bottomMenuClick(i)" class="sidebar-section__main--icon">
-          <img width="24" height="24" :src="menu.icon" alt="">
+          <div :class="[menu.icon]" aria-hidden="true"></div>
           <span v-if="content.toolTip" class="tool-tip">{{menu.title}}</span>
         </div>
       </div>
@@ -98,6 +98,7 @@ export default {
       width: 100%;
       .sidebar-section__main--icon{
         position: relative;
+        line-height: 0px;
         > span{
           position: absolute;
           padding: 5px 10px;
@@ -106,6 +107,7 @@ export default {
           color: white;
           border-radius: 4px;
           left: 100%;
+          line-height: initial;
           display: none;
           transform: translateY(-50%);
           -webkit-transform: translateY(-50%);
@@ -129,15 +131,16 @@ export default {
     }
     .sidebar-section__main--icon{
       cursor: pointer;
-      padding:20px 0;
-      font-size: 14px;
+      padding:12px 0;
+      font-size: 26px;
       font-weight: 400;
       position: static;
       .sidebar-section__main--menu{
         position: relative;
+        line-height: 0px;
         z-index: 9;
-        > img{
-          filter: brightness(0);
+        > div{
+          color: #000000
         }
         > span{
           position: absolute;
@@ -146,6 +149,7 @@ export default {
           background: black;
           color: white;
           border-radius: 4px;
+          line-height: initial;
           left: 100%;
           display: none;
           transform: translateY(-50%);
@@ -169,8 +173,8 @@ export default {
       }
       &.sidebar-section__main--active{
         border-left: 2px solid  var(--activeBgColor);
-        img{
-          filter: brightness(1);
+        div{
+          color: var(--activeBgColor);
         }
       }
       .sidebar-section__main--sub-menu{
@@ -198,12 +202,13 @@ export default {
           -webkit-align-items: center;
           padding: 14px;
           border-left: 2px solid transparent;
-          img{
+          div{
             margin-right: 10px;
           }
           &.active, &:hover{
             background: #f3f4ff;
             border-left: 2px solid #338bf0;
+            color: var(--activeBgColor);
           }
         }
       }
@@ -225,22 +230,22 @@ export default {
       cursor: pointer;
       &:hover{
         background: linear-gradient(90deg, #F8F5FE 0%, rgba(243, 235, 253, 0) 100%);
-        border-left: 1px solid  var(--activeBgColor);;
+        border-left: 1px solid  var(--activeBgColor);
       }
       &.sidebar-section__sub--active{
         background: linear-gradient(90deg, #F8F5FE 0%, rgba(243, 235, 253, 0) 100%);
-        border-left: 1px solid  var(--activeBgColor);;
+        border-left: 1px solid  var(--activeBgColor);
       }
-      img{
+      div{
         margin-right: 10px;
       }
     }
   }
   &.small-sidebar{
     width: 72px;
-    .tool-tip{
-      display: none !important;
-    }
+    // .tool-tip{
+    //   display: none !important;
+    // }
     .sidebar-section__main--icon {
       .sidebar-section__main--sub-menu{
         display: none;
