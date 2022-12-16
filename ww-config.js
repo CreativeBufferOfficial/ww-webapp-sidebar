@@ -74,7 +74,7 @@ export default {
           type: 'boolean',
           tooltip: 'A boolean that defines if the input is required: `true | false`',
       },
-      defaultValue: true,
+      defaultValue: false,
     },
     cards: {
       label: { en: 'Top menus', fr: 'Top menus' },

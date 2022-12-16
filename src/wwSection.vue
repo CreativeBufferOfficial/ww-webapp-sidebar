@@ -135,6 +135,7 @@ export default {
       font-size: 26px;
       font-weight: 400;
       position: static;
+      border-left: 2px solid transparent;
       .sidebar-section__main--menu{
         position: relative;
         line-height: 0px;
@@ -173,7 +174,7 @@ export default {
       }
       &.sidebar-section__main--active{
         border-left: 2px solid  var(--activeBgColor);
-        div{
+        > div:first-child{
           color: var(--activeBgColor);
         }
       }
@@ -210,6 +211,17 @@ export default {
             border-left: 2px solid #338bf0;
             color: var(--activeBgColor);
           }
+        }
+      }
+      &:hover{
+        border-left: 2px solid var(--activeBgColor);
+         > .sidebar-section__main--menu{
+           > .wwi.wwi-icon{
+            color: var(--activeBgColor);
+          }
+        }
+        > .wwi.wwi-icon{
+          color: var(--activeBgColor);
         }
       }
       
