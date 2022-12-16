@@ -174,9 +174,9 @@ export default {
       }
       &.sidebar-section__main--active{
         border-left: 2px solid  var(--activeBgColor);
-        > div:first-child{
-          color: var(--activeBgColor);
-        }
+        // > div:first-child{
+        //   // color: var(--activeBgColor);
+        // }
       }
       .sidebar-section__main--sub-menu{
         left: 100%;
@@ -202,27 +202,28 @@ export default {
           align-items: center;
           -webkit-align-items: center;
           padding: 14px;
-          border-left: 2px solid transparent;
+          border-left: 1px solid transparent;
           div{
             margin-right: 10px;
           }
           &.active, &:hover{
-            background: #f3f4ff;
-            border-left: 2px solid #338bf0;
+            background: linear-gradient(90deg, #F8F5FE 0%, rgba(243, 235, 253, 0) 100%);
+            border-left: 1px solid var(--activeBgColor);
             color: var(--activeBgColor);
           }
         }
       }
       &:hover{
-        border-left: 2px solid var(--activeBgColor);
-         > .sidebar-section__main--menu{
-           > .wwi.wwi-icon{
-            color: var(--activeBgColor);
-          }
-        }
-        > .wwi.wwi-icon{
-          color: var(--activeBgColor);
-        }
+        // border-left: 2px solid var(--activeBgColor);
+        background: #f9fafb;
+        //  > .sidebar-section__main--menu{
+        //    > .wwi.wwi-icon{
+        //     color: var(--activeBgColor);
+        //   }
+        // }
+        // > .wwi.wwi-icon{
+        //   color: var(--activeBgColor);
+        // }
       }
       
     }
