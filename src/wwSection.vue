@@ -131,7 +131,7 @@ export default {
     }
     .sidebar-section__main--icon{
       cursor: pointer;
-      padding:12px 0;
+      padding:0px;
       font-size: 26px;
       font-weight: 400;
       position: static;
@@ -192,8 +192,8 @@ export default {
         }
         .sidebar-section__sub--icon--bold{
           text-align: left;
-          padding: 14px;
-          font-size: 16px;
+          padding: 12px 16px;
+          font-size: 14px;
           font-weight: bold;
         }
         .sidebar-section__sub--icon{
@@ -201,7 +201,7 @@ export default {
           display: -webkit-flex;
           align-items: center;
           -webkit-align-items: center;
-          padding: 14px;
+          padding: 12px 16px;
           border-left: 1px solid transparent;
           div{
             margin-right: 10px;
@@ -213,17 +213,32 @@ export default {
           }
         }
       }
+      > .sidebar-section__main--menu{
+        > .wwi.wwi-icon{
+            border-radius: 8px;
+            padding: 3px;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+        }
+      }
+      > .wwi.wwi-icon{
+          border-radius: 8px;
+          padding: 3px;
+          width: 48px;
+          height: 48px;
+          line-height: 48px;
+      }
       &:hover{
         // border-left: 2px solid var(--activeBgColor);
-        background: #f9fafb;
-        //  > .sidebar-section__main--menu{
-        //    > .wwi.wwi-icon{
-        //     color: var(--activeBgColor);
-        //   }
-        // }
-        // > .wwi.wwi-icon{
-        //   color: var(--activeBgColor);
-        // }
+         > .sidebar-section__main--menu{
+           > .wwi.wwi-icon{
+            background: #F9FAFB;
+          }
+        }
+        > .wwi.wwi-icon{
+          background: #F9FAFB;
+        }
       }
       
     }
